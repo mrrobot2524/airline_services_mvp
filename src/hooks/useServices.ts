@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Service, SelectedService } from '../types';
 
-export const useServices = (initialServices: Service[]) => {
+export const useServices = () => {
   const [selectedServices, setSelectedServices] = useState<SelectedService[]>([]);
 
   const addService = (service: Service) => {
