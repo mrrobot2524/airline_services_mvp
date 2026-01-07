@@ -12,27 +12,27 @@ const App: React.FC = () => {
     addService,
     removeService,
     getTotalAmount
-  } = useServices(mockServices);
+  } = useServices();
 
   const handleCheckout = () => {
     setIsModalOpen(true);
   };
 
   return (
-    <div className="min-h-screen pb-8">
-      <header className="bg-blue-500 text-white py-8 px-4 text-center shadow-md">
-        <h1 className="text-4xl font-bold mb-2">Дополнительные услуги</h1>
-        <p className="text-lg opacity-95">Сделайте ваш полет еще комфортнее</p>
+    <div className="pb-8 min-h-screen">
+      <header className="bg-blue-500 shadow-md px-4 py-8 text-white text-center">
+        <h1 className="mb-2 font-bold text-4xl">Дополнительные услуги</h1>
+        <p className="opacity-95 text-lg">Сделайте ваш полет еще комфортнее</p>
       </header>
 
-      <main className="max-w-7xl mx-auto mt-8 px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-6 items-start">
+      <main className="mx-auto mt-8 px-4 max-w-7xl">
+        <div className="items-start gap-6 grid grid-cols-1 lg:grid-cols-[1fr_400px]">
           <ServicesList 
             services={mockServices}
             onAddService={addService}
           />
 
-          <div className="lg:sticky lg:top-6">
+          <div className="lg:top-6 lg:sticky">
             <OrderSummary
               selectedServices={selectedServices}
               totalAmount={getTotalAmount()}
